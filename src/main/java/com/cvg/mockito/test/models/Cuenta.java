@@ -3,11 +3,15 @@ package com.cvg.mockito.test.models;
 import com.cvg.mockito.test.exceptions.DineroInsuficienteException;
 import lombok.Data;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Data
+@Entity
+@Table(name = "cuentas")
 public class Cuenta {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String persona;
     private BigDecimal saldo;
