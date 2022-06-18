@@ -14,5 +14,6 @@ public class Banco {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nombre;
+    @Column(name = "total_transferencia")
     private Integer totalTransferencias;
 }
