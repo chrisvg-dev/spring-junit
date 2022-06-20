@@ -5,6 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Objects;
 
 @Data
 @Entity
@@ -41,7 +42,10 @@ public class Cuenta {
 
         Cuenta c = (Cuenta) o;
         if (this.persona == null || this.saldo == null) return false;
-        return this.persona.equals(c.getPersona()) && this.saldo.equals(c.getSaldo());
+        return
+                Objects.equals( id, c.id ) &&
+                        Objects.equals( persona, c.persona ) &&
+                        Objects.equals( saldo, c.saldo );
     }
 
 }
